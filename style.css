@@ -1,0 +1,39 @@
+<style type="text/css"> 
+body{text-align:center;}
+
+#bg{width:1080px;margin:auto;background-image:url(images/bg.jpg);}
+#title_bg{width:1080px;margin:auto;background-image:url(images/title.jpg);text-align:center;font-size: 18pt;}
+
+.blank1{font-size: 12pt;}
+.title2{font-size: 26pt;font-family:sans-serif;text-align:left;}
+#date{font-size: 12pt;font-family:sans-serif;text-align:right;}
+
+#front_video{width:1080px;margin:auto;}
+
+
+#content_title_area{width:1050px;margin:auto;background-image:url(images/t-bg02.png)}
+
+#property{width:1050px;margin:auto;background-image:url(images/t-bg01.png);}
+#fgsz_list{width:100%;font-size: 22pt;font-family:sans-serif;text-align:right;align:center;text-align:center;}
+#property_list{width:100%;font-size: 22pt;font-family:sans-serif;text-align:right;align:center;text-align:center;}
+#property_left td{font-size: 22pt;font-family:sans-serif;text-align:right;align:center;text-align:center;}
+
+
+.text_bg{width:1050px;margin:auto;background-image:url(images/bg02.png);}
+.text_area{width:900px;margin:auto;word-wrap:break-word; word-break:break-all;font-size: 42pt;font-family:sans-serif;text-align:left;}
+#announcement_title{font-size: 36pt;font-family:sans-serif;text-align:center;}
+#announcement_content{font-size: 26pt;font-family:sans-serif;text-align:left;}
+
+
+#interact_bg{width:1050px;margin:auto;background-image:url(images/bg02.png);}
+.img_area{text-align:center;}
+
+.repair_form {  
+            border: 1px solid #B1CDE3;  
+            padding:0;   
+            margin:0 auto;  
+            border-collapse: collapse;  
+ 
+        }  
+
+</style>

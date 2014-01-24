@@ -1,0 +1,11 @@
+115.28.27.56
+root
+5e9bdf17
+FTP:
+www
+OBOjuuhe9
+MYSQL:
+root
+86a24e5b00
+
+tkp/tkp
