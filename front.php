@@ -82,8 +82,8 @@
 				{
 					echo "<td id='cat_$row[0]'><img src='$row[2]'></img></td>";
 					//echo "<script>$('#cat_$row[0]').click(function(){	$('#down_area').load('$row[3]?community=".$_REQUEST['gid']."&catname='+$('#cid').val())});</script>";
-					echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?community=".$_REQUEST['gid']."&catid=".$row[0]."')});</script>";
-					//echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('xxxx.php?community=xxx&catname=xxx)});</script>";
+					//echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?community=".$_REQUEST['gid']."&catid=".$row[0]."')});</script>";
+					echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?ask_type=cat&catid=".$row[0]."')});</script>";
 				}
 			}
 			?>
@@ -126,8 +126,7 @@
 						if(++$i>4) break;
 						echo "<td id='cat_$row[0]'><img src='$row[2]'></img></td>";
 						//echo "<script>$('#cat_$row[0]').click(function(){	$('#down_area').load('$row[3]?community=".$_REQUEST['gid']."&catname='+$('#cid').val())});</script>";
-						echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?community=".$_REQUEST['gid']."&catid=".$row[0]."')});</script>";
-						//echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('xxxx.php?community=xxx&catname=xxx)});</script>";
+						echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?ask_type=cat&catid=".$row[0]."')});</script>";
 					}
 					?>
 					</tr>
@@ -149,8 +148,7 @@
 						if(++$i<5) continue;
 						echo "<td id='cat_$row[0]'><img src='$row[2]'></img></td>";
 						//echo "<script>$('#cat_$row[0]').click(function(){	$('#down_area').load('$row[3]?community=".$_REQUEST['gid']."&catname='+$('#cid').val())});</script>";
-						echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?community=".$_REQUEST['gid']."&catid=".$row[0]."')});</script>";
-						//echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('xxxx.php?community=xxx&catname=xxx)});</script>";
+						echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?ask_type=cat&catid=".$row[0]."')});</script>";
 					}
 					?>
 					<tr>

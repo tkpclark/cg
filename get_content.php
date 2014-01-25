@@ -59,7 +59,7 @@
 		return $row['image'];
 	}
 	*/
-	function get_title_list($catid,&$cat_type)
+	function get_cat_info($catid,&$cat_type)
 	{
 		//如果请求的cat的内容是目录则返回目录列表，如果是内容则返回内容
 		
@@ -81,7 +81,7 @@
 		
 		$row = $res->fetch_array(MYSQLI_ASSOC);
 		$cat_type=$row['modelid'];
-		if($row['modelid']=="1")//文章类型，此时返回文件title列表
+		if($cat_type=="1")//文章类型，此时返回文件title列表
 		{
 			mysqli_query($mysqli, "set names utf8");
 			$sql=sprintf("select id,title from `v9_news` where catid IN (select catid from v9_category where catid='%s')",$catid);
@@ -103,7 +103,7 @@
 			}
 			return isset($rows)?$rows:false;
 		}
-		else if($row['modelid']=="3")//图片类型，此时直接返回内容
+		else if($cat_type=="3")//图片类型，此时直接返回内容
 		{
 			
 		}

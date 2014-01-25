@@ -1,3 +1,4 @@
+<?php require_once 'get_content.php';?>
 <html>
 
     <head>
@@ -28,7 +29,7 @@
 	    <!-- title -->
 		<div id="title_bg">
 			<div id="blank1">&nbsp;</div>
-			<div id="title_text">幸福里社区</div>
+			<div id="title_text"><?php echo get_cat_name($_REQUEST['cid']); ?></div>
 			<div id="date">2014-01-24</div>
 		</div>
 		
