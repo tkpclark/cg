@@ -43,6 +43,11 @@
 				if($cat_type=="3")//此为图片类型的栏目
 				{
 					
+					eval("\$aa=".$rows['pictureurls'].";");
+					for($i=0;$i<count($aa);$i++)
+						echo "<img src='".$aa[0]['url']."'></img>";
+					echo "<p>".$rows['content']."</p>";
+					
 				}
 				
 				?>

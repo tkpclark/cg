@@ -105,7 +105,16 @@
 		}
 		else if($cat_type=="3")//图片类型，此时直接返回内容
 		{
-			
+			mysqli_query($mysqli, "set names utf8");
+			$sql=sprintf("select content,pictureurls from v9_picture_data where id in (select id from v9_picture where catid='%s' ) limit 1",$catid);
+			//echo $sql;
+			$res = mysqli_query($mysqli, $sql);
+			if (!$res) {
+				//$logging->info("Failed to run query: (" . $mysqli->errno . ") " . $mysqli->error);
+				exit;
+			}
+			$rows = $res->fetch_array(MYSQLI_ASSOC);
+			return $rows;
 		}
 	}	
 	
