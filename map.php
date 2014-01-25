@@ -21,7 +21,7 @@
     </div>
 <script type="text/javascript"> 
 $("#return_button").click(function(){
-	$("#down_area").load("front.php");
+	$("#down_area").load("front.php?community="+$("#cid").val());
 
 
 	

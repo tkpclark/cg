@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="keyboard/jquery.keypad.js"></script>
         <script type="text/javascript">
         $(document).ready(function(){
-        	$("#down_area").load("front.php");
+        	$("#down_area").load("front.php?community="+$("#cid").val()+"&gid="+$("#gid").val());
 			console.log($("#cid").val()) ;       
      
         });
@@ -20,7 +20,9 @@
 	<body>
 	
 	<?php if(!isset($_REQUEST['cid'])){echo "no cid!"; exit;} else{$cid=$_REQUEST['cid'];}?>
+	<?php if(!isset($_REQUEST['gid'])){echo "no gid!"; exit;} else{$gid=$_REQUEST['gid'];}?>
 	<input id="cid" type="hidden" value="<?php echo $cid;?>">
+	<input id="gid" type="hidden" value="<?php echo $gid;?>">
 	   <div id="bg">
 	   
 	    <!-- title -->

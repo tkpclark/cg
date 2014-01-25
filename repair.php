@@ -1,4 +1,4 @@
-<?php $catname="保修预约";?>
+<?php $catname="报修预约";?>
 
 	<div id="content_title_area">
 		<table width=100%>
@@ -53,6 +53,12 @@
 				</tr>
 			
 			</table>
+			</div>
+			
+			<div class="text_area">
+			<div class="blank1">&nbsp;</div>
+			<p align="center"><img id="submit_repair" src="images/button13.png"></img></p>
+			</div>
 			<div class="blank1">&nbsp;</div>
 			</div>
 		</div>
@@ -71,7 +77,14 @@
     
 <script type="text/javascript"> 
 $("#return_button").click(function(){
-	$("#down_area").load("front.php");
+	$("#down_area").load("front.php?community="+$("#cid").val());
+});
+
+$("#submit_repair").click(function(){
+	$("#down_area").load("front.php?community="+$("#cid").val());
+
+
+	
 });
 
 $(function () {

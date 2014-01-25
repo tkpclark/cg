@@ -55,12 +55,12 @@
         });
 </script>
 
-
+<?php require_once 'get_content.php';?>
 	<!-- 房管市政 -->
 	<div id="content_title_area">
 		<table width=100%>
 			<tr>
-				<td class="title2">&nbsp;&nbsp;&nbsp;&nbsp;房管市政</td>
+				<td class="title2">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($_REQUEST['gid']);?></td>
 				<td align=right>
 				<iframe name="weather_inc" src="http://tianqi.xixik.com/cframe/9" width="500" height="60" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 				</td>
@@ -73,10 +73,22 @@
 	
 	<table id="fgsz_list">
 		<tr>
-			<td id="announcement"><img src="images/icon09.png"></img></td>
-			<td id="handbook"><img src="images/icon10.png"></img></td>
-			<td id="interact"><img src="images/icon11.png"></img></td>
-			<td id="work"><img src="images/icon12.png"></img></td>
+		
+			<?php 
+			$rows = get_front_list($_REQUEST['gid']);
+			if($rows)
+			{
+				foreach ($rows as $row)
+				{
+					echo "<td id='cat_$row[0]'><img src='$row[2]'></img></td>";
+					//echo "<script>$('#cat_$row[0]').click(function(){	$('#down_area').load('$row[3]?community=".$_REQUEST['gid']."&catname='+$('#cid').val())});</script>";
+					echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?community=".$_REQUEST['gid']."&catid=".$row[0]."')});</script>";
+					//echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('xxxx.php?community=xxx&catname=xxx)});</script>";
+				}
+			}
+			?>
+			
+			
 		</tr>
 	</table>
 	
@@ -103,30 +115,57 @@
 	<table id="property_list" >
 		<tr>
 			<td width="70%" >
+				
 				<table id="property_left" width="100%">
 					<tr>
-						<td id="property_tell"><img src="images/icon01.png"></img></td>
-						<td id="notice"><img src="images/icon02.png"></img></td>
-						<td id="map"><img src="images/icon03.png"></img></td>
-						<td id="repair"><img src="images/icon04.png"></img></td>
+					<?php 
+					$i=0;
+					$rows = get_front_list($_REQUEST['community']);
+					foreach ($rows as $row)
+					{
+						if(++$i>4) break;
+						echo "<td id='cat_$row[0]'><img src='$row[2]'></img></td>";
+						//echo "<script>$('#cat_$row[0]').click(function(){	$('#down_area').load('$row[3]?community=".$_REQUEST['gid']."&catname='+$('#cid').val())});</script>";
+						echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?community=".$_REQUEST['gid']."&catid=".$row[0]."')});</script>";
+						//echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('xxxx.php?community=xxx&catname=xxx)});</script>";
+					}
+					?>
+					</tr>
+					<?php 
+					$i=0;
+					$rows = get_front_list($_REQUEST['community']);
+					foreach ($rows as $row)
+					{
+						if(++$i>4) break;
+						echo "<td>$row[1]</td>";
+					}
+					?>
+					<tr>
+					</tr>
+					<?php 
+					$i=0;
+					foreach ($rows as $row)
+					{
+						if(++$i<5) continue;
+						echo "<td id='cat_$row[0]'><img src='$row[2]'></img></td>";
+						//echo "<script>$('#cat_$row[0]').click(function(){	$('#down_area').load('$row[3]?community=".$_REQUEST['gid']."&catname='+$('#cid').val())});</script>";
+						echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?community=".$_REQUEST['gid']."&catid=".$row[0]."')});</script>";
+						//echo "<script>$('#cat_".$row[0]."').click(function(){	$('#down_area').load('xxxx.php?community=xxx&catname=xxx)});</script>";
+					}
+					?>
+					<tr>
+					<?php 
+					$i=0;
+					$rows = get_front_list($_REQUEST['community']);
+					foreach ($rows as $row)
+					{
+						if(++$i<5) continue;
+						echo "<td>$row[1]</td>";
+					}
+					?>
 					</tr>
 					<tr>
-						<td>物业公示</td>
-						<td>通知信息</td>
-						<td>小区地图</td>
-						<td>保修预约</td>
-					</tr>
-					<tr>
-						<td id="promotion"><img src="images/icon05.png"></img></td>
-						<td id="book"><img src="images/icon06.png"></img></td>
-						<td id="traffic"><img src="images/icon07.png"></img></td>
-						<td id="ticket"><img src="images/icon08.png"></img></td>
-					</tr>
-					<tr>
-						<td>促销打折</td>
-						<td>手机图书</td>
-						<td>市政交通</td>
-						<td>手机票务</td>
+
 					</tr>
 				</table>
 			</td>

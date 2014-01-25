@@ -20,13 +20,12 @@ body{text-align:center;}
 
 
 .text_bg{width:1050px;margin:auto;background-image:url(images/bg02.png);}
-.text_area{width:900px;margin:auto;word-wrap:break-word; word-break:break-all;font-size: 42pt;font-family:sans-serif;text-align:left;}
-#announcement_title{font-size: 36pt;font-family:sans-serif;text-align:center;}
-#announcement_content{font-size: 26pt;font-family:sans-serif;text-align:left;}
+.text_area{width:1050px;margin:auto;word-wrap:break-word; word-break:break-all;font-size: 42pt;font-family:sans-serif;text-align:left;overflow-y:auto; min-height:810px;max-height:810px;}
 
 
 #interact_bg{width:1050px;margin:auto;background-image:url(images/bg02.png);}
-.img_area{text-align:center;}
+.img_area{width:1050px;margin:auto;word-wrap:break-word; word-break:break-all;font-size: 42pt;font-family:sans-serif;text-align:left;overflow-y:auto; min-height:810px;max-height:810px;}
+
 
 .repair_form {  
             border: 1px solid #B1CDE3;  
