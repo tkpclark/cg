@@ -22,7 +22,7 @@
 	{
 		global $mysqli;
 		mysqli_query($mysqli, "set names utf8");
-		$sql=sprintf("select catid,catname,image,description from v9_category where parentid='%s' order by catid asc;",$catid);
+		$sql=sprintf("select catid,catname,image,description from v9_category where parentid='%s' order by listorder asc;",$catid);
 		//echo $sql;
 		$res = mysqli_query($mysqli, $sql);
 		if (!$res) {

@@ -1,5 +1,4 @@
 <?php require_once 'get_content.php';?>
-<html>
 
     <head>
         <meta charset="utf-8">
@@ -9,8 +8,28 @@
         <script type="text/javascript" src="../../easyui/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="keyboard/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="keyboard/jquery.keypad.js"></script>
-        <script type="text/javascript">
+		
+		<!-- 
+		<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script language="javascript" src="http://revolunet.github.com/VLCcontrols/src/jquery-vlc.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://revolunet.github.com/VLCcontrols/src/styles.css" />
+	 	-->
+
+
+        <script type="text/javascript" language="javascript">
+
+        function play(tgt) {
+            var uri = "mms://tv.jxgdw.com/jxtv1";
+            if (document.all) tgt += "_IE"
+            var tgt = document.getElementById(tgt);
+           // alert(tgt);
+            if (document.all) tgt.playlist.add(uri,uri, new Array());
+            else     tgt.playlist.add(uri,uri, "");
+            tgt.playlist.play(); 
+        }
+
         
+        /*
         var handler = function(){
         	var vlc = document.getElementById("vlc");
 		    vlc.audio.volume=160;
@@ -19,14 +38,18 @@
         }
         
         setTimeout(handler,10000); 
-        
+        */
         
         $(document).ready(function(){
         	$("#down_area").load("front.php?community="+$("#cid").val()+"&gid="+$("#gid").val());
 			console.log($("#cid").val()) ;  
 			
-			
-				
+			/*
+			var player = VLCobject.embedPlayer('video', 400, 300, true);
+	        player.play('mms://tv.jxgdw.com/jxtv1');
+	        */
+	        
+	        play('vlc');
      
         });
   
@@ -48,7 +71,6 @@
 		</div>
 		
 		<!-- video -->
-		<div id="video" >
 		<!-- 
 		<img src="images/video.jpg">
 		
@@ -70,14 +92,14 @@
     	<embed 
     	type="application/x-vlc-plugin" 
     	pluginspage="http://www.videolan.org" 
+    	version="VideoLAN.VLCPlugin.2"
     	width="1080"
-      	height="720"
+      	height="864"
         id="vlc"
-    	mrl="mms://tv.jxgdw.com/jxtv1"/>
+    	></embed>
     	
     	
-	<object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab"></object>
-		</div>
+		
 		<div class="blank1">&nbsp;</div>
 		
 		<div id="down_area"></div>
@@ -85,4 +107,3 @@
 	   </div>
 	    
     </body>
-</html>
