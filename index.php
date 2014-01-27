@@ -19,7 +19,7 @@
         <script type="text/javascript" language="javascript">
 
         function play(tgt) {
-            var uri = "mms://192.168.0.9:8080/";
+            var uri = "http://live.64ma.com/livePlay.asp?uid=279&amp;rn=b3a8NiaNibe9baZ88ZSS";
             if (document.all) tgt += "_IE"
             var tgt = document.getElementById(tgt);
            // alert(tgt);

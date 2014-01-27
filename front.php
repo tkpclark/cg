@@ -57,8 +57,8 @@
 
 <?php require_once 'get_content.php';?>
 	<!-- 房管市政 -->
-	<div id="content_title_area">
-		<table width=100%>
+	<div class="cat_name_area">
+		<table class="cat_table">
 			<tr>
 				<td class="title2">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($_REQUEST['gid']);?></td>
 				<td align=right>
@@ -95,17 +95,15 @@
 	
 	
 	<!-- 物业服务 -->
-	<div id="property">
-		<div class="blank1">&nbsp;</div>
-		<table width="100%">
+	<div class="cat_name_area">
+		<table  class="cat_table" width="100%">
 			<tr>
-				<td class="title2" width="20%">&nbsp;&nbsp;&nbsp;&nbsp;物业服务</td>
+				<td class="title2" width="40%">&nbsp;&nbsp;&nbsp;&nbsp;物业服务</td>
 				<td >
 				<marquee>做人要厚道!做人要厚道!做人要厚道!</marquee> 
 				</td>
 			</tr>
 		</table>
-		<div class="blank1">&nbsp;</div>
 	</div>
         
         

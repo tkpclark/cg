@@ -15,14 +15,16 @@ function auto_return(){
 auto_return();
 </script>
 
-	<div id="content_title_area">
-		<table width=100%>
+	<div class="cat_name_area">
+		<table class="cat_table">
 			<tr>
-				<td id="catname" class="title2">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($catid);?></td>
-				<td class="return" align="right"><img id="return_button" src="images/button01.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td id="title2" >&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($catid);?></td>
+				<td class="return" align="right"><img id="return_button" src="images/button01.png"></img></td>
 			</tr>
 		</table>
 	</div>
+	
+
 	
 	<div class="blank1">&nbsp;</div>
 	

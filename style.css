@@ -5,13 +5,14 @@ body{text-align:center;}
 #title_bg{width:1080px;margin:auto;background-image:url(images/title.jpg);text-align:center;font-size: 18pt;}
 
 .blank1{font-size: 12pt;}
-.title2{font-size: 26pt;font-family:sans-serif;text-align:left;}
+
 #date{font-size: 12pt;font-family:sans-serif;text-align:right;}
 
-#front_video{width:1080px;margin:auto;}
 
 
-#content_title_area{width:1050px;margin:auto;background-image:url(images/t-bg02.png)}
+.cat_name_area{width:1050px;margin:auto;background-image:url(images/t-bg02.png);min-height:100px;max-height:100px;vertical-align:middle;}
+.cat_table td{font-size: 40pt;font-family:sans-serif;text-align:left;vertical-align:middle;height:100px;width:100%}
+
 
 #property{width:1050px;margin:auto;background-image:url(images/t-bg01.png);}
 #fgsz_list{width:100%;font-size: 22pt;font-family:sans-serif;text-align:right;align:center;text-align:center;}

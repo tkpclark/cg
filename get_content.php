@@ -22,7 +22,7 @@
 	{
 		global $mysqli;
 		mysqli_query($mysqli, "set names utf8");
-		$sql=sprintf("select catid,catname,image,description from v9_category where parentid='%s' order by listorder asc;",$catid);
+		$sql=sprintf("select catid,catname,image,description from v9_category where parentid='%s' order by listorder asc,catid asc;",$catid);
 		//echo $sql;
 		$res = mysqli_query($mysqli, $sql);
 		if (!$res) {
@@ -84,7 +84,7 @@
 		if($cat_type=="1")//文章类型，此时返回文件title列表
 		{
 			mysqli_query($mysqli, "set names utf8");
-			$sql=sprintf("select id,title from `v9_news` where catid IN (select catid from v9_category where catid='%s')",$catid);
+			$sql=sprintf("select id,title from `v9_news` where catid IN (select catid from v9_category where catid='%s') order by listorder asc, id desc",$catid);
 			//echo $sql;
 			$res = mysqli_query($mysqli, $sql);
 			if (!$res) {
