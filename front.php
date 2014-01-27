@@ -96,11 +96,11 @@
 	
 	<!-- 物业服务 -->
 	<div class="cat_name_area">
-		<table  class="cat_table" width="100%">
+		<table  class="cat_table" >
 			<tr>
-				<td class="title2" width="40%">&nbsp;&nbsp;&nbsp;&nbsp;物业服务</td>
-				<td >
-				<marquee>做人要厚道!做人要厚道!做人要厚道!</marquee> 
+				<td width="40%" >&nbsp;&nbsp;&nbsp;&nbsp;物业服务</td>
+				<td style="font-size: 30pt;">
+				<marquee><?php echo get_recom($_REQUEST['community'])?></marquee> 
 				</td>
 			</tr>
 		</table>

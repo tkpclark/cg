@@ -19,7 +19,8 @@
         <script type="text/javascript" language="javascript">
 
         function play(tgt) {
-            var uri = "http://live.64ma.com/livePlay.asp?uid=279&amp;rn=b3a8NiaNibe9baZ88ZSS";
+          //  var uri = "http://live.64ma.com/livePlay.asp?uid=279&amp;rn=b3a8NiaNibe9baZ88ZSS";
+             var uri = "http://qqlive.dnion.com:1863/2515002412.flv?apptype=live&amp;pla=WIN&amp;time=1390830090&amp;cdn=zijian&amp;vkey=91AB32CA49F45608ABEFA90119620493D1FA61F4D23029098BC1DEF973DF135FC794708E87BCDABB";
             if (document.all) tgt += "_IE"
             var tgt = document.getElementById(tgt);
            // alert(tgt);

@@ -152,5 +152,25 @@
 		$row = $res->fetch_array(MYSQLI_ASSOC);
 		return $row['content'];
 	}
+	function get_recom($cid)
+	{
+		global $mysqli;
+		mysqli_query($mysqli, "set names utf8");
+		$sql="select content from v9_news_data where id in(select id from v9_news where catid=(select catid from v9_category where catname='通知信息' and parentid='$cid')) order by id limit 1";
+		//echo $sql;
+		$res = mysqli_query($mysqli, $sql);
+		if (!$res) {
+			//$logging->info("Failed to run query: (" . $mysqli->errno . ") " . $mysqli->error);
+			exit;
+		}
+		//echo "number: ".$res->num_rows;
+	
+		$row = $res->fetch_array(MYSQLI_ASSOC);
+		$a=$row['content'];
+		$a=str_replace("<br />","",$a);
+		$a=str_replace("\n","",$a);
+		$a=str_replace("&nbsp;","",$a);
+		return $a;
+	}
 	
 ?>
