@@ -8,7 +8,8 @@ function go_front(){
 	clearTimeout(t);
 }
 function auto_return(){
-	var duration=10000;
+	var duration=$("#duration").val()*1000;
+	console.log("duration:"+duration);
 	t=setTimeout("go_front()",duration);
 }
 auto_return();

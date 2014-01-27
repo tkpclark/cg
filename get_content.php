@@ -136,5 +136,21 @@
 		
 		
 	}
+	function get_content_by_name($name)
+	{
+		global $mysqli;
+		mysqli_query($mysqli, "set names utf8");
+		$sql="select content from v9_news_data where id in (select id from v9_news where title='$name')";
+		//echo $sql;
+		$res = mysqli_query($mysqli, $sql);
+		if (!$res) {
+			//$logging->info("Failed to run query: (" . $mysqli->errno . ") " . $mysqli->error);
+			exit;
+		}
+		//echo "number: ".$res->num_rows;
+		
+		$row = $res->fetch_array(MYSQLI_ASSOC);
+		return $row['content'];
+	}
 	
 ?>

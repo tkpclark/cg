@@ -167,9 +167,7 @@
 				</table>
 			</td>
 			<td>
-				<img src="images/erweima.png">
-				<p>更多优惠便利</p>
-				<p>请下载app</p>
+				<?php echo get_content_by_name("二维码区域");?>
 			</td>
 		</tr>
 	</table>
@@ -178,7 +176,4 @@
     </div>
     
     
-<script src="http://lab.julying.com/weather/v3/jquery.weather.build.min.js?parentbox=weather_inc&moveArea=all&moveArea=limit&zIndex=1&move=1&move=0&drag=1&drag=0
-&autoDrop=0&autoDrop=1&styleSize=big&styleSize=small&style=default&style=medialoot&style=meteocons&style=blue&style=cartoon-1&style=cartoon-2&style=cartoo
-n-3&style=default&time=1390826721&area=client&area=assign&city=%E5%8C%97%E4%BA%AC"></script>
     

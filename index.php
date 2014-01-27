@@ -40,8 +40,8 @@
         	weekday[5]="星期五";
         	weekday[6]="星期六";
         	
-        	var date= new Date();
-        	var mydate=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDay()+"日 "+weekday[date.getDay()] ;
+        	var d= new Date();
+        	var mydate=d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日 "+weekday[d.getDay()] ;
         	console.log(mydate);
         	$("#date").html(mydate);
         }
@@ -82,6 +82,8 @@
 	<?php if(!isset($_REQUEST['gid'])){echo "no gid!"; exit;} else{$gid=$_REQUEST['gid'];}?>
 	<input id="cid" type="hidden" value="<?php echo $cid;?>">
 	<input id="gid" type="hidden" value="<?php echo $gid;?>">
+	<input id="duration" type="hidden" value="<?php echo get_content_by_name("空闲回主页时间");?>">
+	
 	   <div id="bg">
 	   
 	    <!-- title -->
