@@ -19,7 +19,7 @@
         <script type="text/javascript" language="javascript">
 
         function play(tgt) {
-            var uri = "mms://tv.jxgdw.com/jxtv1";
+            var uri = "mms://192.168.0.9:8080/";
             if (document.all) tgt += "_IE"
             var tgt = document.getElementById(tgt);
            // alert(tgt);
@@ -27,7 +27,24 @@
             else     tgt.playlist.add(uri,uri, "");
             tgt.playlist.play(); 
         }
-
+		
+        function display_date(){
+        	
+        	
+        	var weekday=new Array(7);
+        	weekday[0]="星期日";
+        	weekday[1]="星期一";
+        	weekday[2]="星期二";
+        	weekday[3]="星期三";
+        	weekday[4]="星期四";
+        	weekday[5]="星期五";
+        	weekday[6]="星期六";
+        	
+        	var date= new Date();
+        	var mydate=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDay()+"日 "+weekday[date.getDay()] ;
+        	console.log(mydate);
+        	$("#date").html(mydate);
+        }
         
         /*
         var handler = function(){
@@ -42,15 +59,19 @@
         
         $(document).ready(function(){
         	$("#down_area").load("front.php?community="+$("#cid").val()+"&gid="+$("#gid").val());
-			console.log($("#cid").val()) ;  
+			//console.log($("#cid").val()) ;  
 			
 			/*
 			var player = VLCobject.embedPlayer('video', 400, 300, true);
 	        player.play('mms://tv.jxgdw.com/jxtv1');
 	        */
+	       
+	        
+	        
+	        setInterval(display_date(),1000);
+	        
 	        
 	        play('vlc');
-     
         });
   
 		</script>
@@ -64,10 +85,9 @@
 	   <div id="bg">
 	   
 	    <!-- title -->
-		<div id="title_bg">
-			<div id="blank1">&nbsp;</div>
+		<div id="title_bg" style="font-size: 32pt">
 			<div id="title_text"><?php echo get_cat_name($_REQUEST['cid']); ?></div>
-			<div id="date">2014-01-24</div>
+			<div id="date" style="font-size: 22pt"></div>
 		</div>
 		
 		<!-- video -->
@@ -107,3 +127,5 @@
 	   </div>
 	    
     </body>
+    
+   

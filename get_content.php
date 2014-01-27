@@ -65,7 +65,7 @@
 		
 		global $mysqli;
 		
-		//先查看这个cat文章类型还是图片类型，如果是文章类型则显示标题列表，如果是图片内容直接显示内容
+		//先查看这个cat是文章类型还是图片类型，如果是文章类型则显示标题列表，如果是图片内容直接显示内容
 		$sql=sprintf("select catid,modelid from v9_category where catid='%s'",$catid);
 		$res = mysqli_query($mysqli, $sql);
 		if (!$res) {

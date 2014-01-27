@@ -62,7 +62,6 @@
 			<tr>
 				<td class="title2">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($_REQUEST['gid']);?></td>
 				<td align=right>
-				<iframe name="weather_inc" src="http://tianqi.xixik.com/cframe/9" width="500" height="60" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 				</td>
 			</tr>
 		</table>
@@ -177,3 +176,9 @@
 
 
     </div>
+    
+    
+<script src="http://lab.julying.com/weather/v3/jquery.weather.build.min.js?parentbox=weather_inc&moveArea=all&moveArea=limit&zIndex=1&move=1&move=0&drag=1&drag=0
+&autoDrop=0&autoDrop=1&styleSize=big&styleSize=small&style=default&style=medialoot&style=meteocons&style=blue&style=cartoon-1&style=cartoon-2&style=cartoo
+n-3&style=default&time=1390826721&area=client&area=assign&city=%E5%8C%97%E4%BA%AC"></script>
+    

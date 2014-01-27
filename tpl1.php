@@ -1,6 +1,19 @@
 <?php require_once 'get_content.php';?>
 <?php $catid=$_REQUEST['catid'];?>
 
+<script type="text/javascript">
+var t=0;
+function go_front(){
+	$("#down_area").load("front.php?gid="+$("#gid").val()+"&community="+$("#cid").val());
+	clearTimeout(t);
+}
+function auto_return(){
+	var duration=10000;
+	t=setTimeout("go_front()",duration);
+}
+auto_return();
+</script>
+
 	<div id="content_title_area">
 		<table width=100%>
 			<tr>
@@ -39,15 +52,24 @@
 							echo "<script>$('#content_".$row[0]."').click(function(){	$('#down_area').load('tpl1.php?ask_type=item&catid=".$catid."&content_id=".$row[0]."')});</script>";
 						}
 					}
+					else
+					{
+						echo "暂时还没有内容";
+					}
 				}
 				if($cat_type=="3")//此为图片类型的栏目
 				{
-					
-					eval("\$aa=".$rows['pictureurls'].";");
-					for($i=0;$i<count($aa);$i++)
-						echo "<img src='".$aa[0]['url']."'></img>";
-					echo "<p>".$rows['content']."</p>";
-					
+					if($rows)
+					{
+						eval("\$aa=".$rows['pictureurls'].";");
+						for($i=0;$i<count($aa);$i++)
+							echo "<img src='".$aa[0]['url']."'></img>";
+						echo "<p>".$rows['content']."</p>";
+					}
+					else
+					{
+						echo "暂时还没有内容";
+					}
 				}
 				
 				?>
@@ -55,7 +77,7 @@
 				<script type="text/javascript"> 
 				$("#return_button").unbind();
 				$("#return_button").click(function(){
-					$("#down_area").load("front.php?gid="+$("#gid").val()+"&community="+$("#cid").val());
+					go_front();
 				});
 				</script>
 				<?php
