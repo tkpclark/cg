@@ -16,10 +16,10 @@ auto_return();
 </script>
 
 	<div class="cat_name_area">
-		<table class="cat_table">
+		<table class="cat_table" width="100%">
 			<tr>
 				<td id="title2" >&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($catid);?></td>
-				<td class="return" align="right"><img id="return_button" src="images/button01.png"></img></td>
+				<td class="return" style="vertical-align:middle; text-align:right;"><img id="return_button" src="images/button01.png"></img></td>
 			</tr>
 		</table>
 	</div>

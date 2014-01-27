@@ -56,12 +56,12 @@
 </script>
 
 <?php require_once 'get_content.php';?>
-	<!-- 房管市政 -->
+
 	<div class="cat_name_area">
-		<table class="cat_table">
+		<table class="cat_table" width="100%">
 			<tr>
 				<td class="title2">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($_REQUEST['gid']);?></td>
-				<td align=right>
+				<td style="vertical-align:middle; text-align:right;font-size: 30pt;"><?php echo get_content_by_name("天气预报");?>
 				</td>
 			</tr>
 		</table>
@@ -111,7 +111,7 @@
 	
 	<table id="property_list" >
 		<tr>
-			<td width="70%" >
+			<td width="80%" >
 				
 				<table id="property_left" width="100%">
 					<tr>

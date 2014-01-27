@@ -22,7 +22,7 @@
 	{
 		global $mysqli;
 		mysqli_query($mysqli, "set names utf8");
-		$sql=sprintf("select catid,catname,image,description from v9_category where parentid='%s' order by listorder asc,catid asc;",$catid);
+		$sql=sprintf("select catid,catname,image,description from v9_category where parentid='%s' and modelid not in (2)order by listorder asc,catid asc;",$catid);
 		//echo $sql;
 		$res = mysqli_query($mysqli, $sql);
 		if (!$res) {
@@ -167,8 +167,8 @@
 	
 		$row = $res->fetch_array(MYSQLI_ASSOC);
 		$a=$row['content'];
-		$a=str_replace("<br />","",$a);
-		$a=str_replace("\n","",$a);
+		$a=str_replace("<br />"," ",$a);
+		$a=str_replace("\n"," ",$a);
 		$a=str_replace("&nbsp;","",$a);
 		return $a;
 	}

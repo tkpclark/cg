@@ -88,9 +88,14 @@
 	   <div id="bg">
 	   
 	    <!-- title -->
-		<div id="title_bg" style="font-size: 32pt">
-			<div id="title_text"><?php echo get_cat_name($_REQUEST['cid']); ?></div>
-			<div id="date" style="font-size: 22pt"></div>
+		<div id="title_bg">
+		<table width="100%" style="height:100px">
+		<tr>
+			<td width="30%" ></td>
+			<td width="30%" id="title_text" style="font-size: 42pt"><?php echo get_cat_name($_REQUEST['cid']); ?></td>
+			<td width="30%" id="date" style="font-size: 22pt;vertical-align:bottom;"></td>
+		</tr>
+		</table>
 		</div>
 		
 		<!-- video -->
