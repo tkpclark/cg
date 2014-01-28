@@ -1,16 +1,16 @@
 <style type="text/css"> 
 body{text-align:center;}
 
-#bg{width:1080px;margin:auto;background-image:url(images/bg.jpg);}
-#title_bg{width:1080px;margin:auto;background-image:url(images/1.png);font-size: 18pt;min-height:100px;max-height:100px;}
+#bg{width:1070px;margin:auto;background-image:url(images/bg.jpg);}
+#title_bg{margin:auto;background-image:url(images/1.png);font-size: 18pt;min-height:100px;max-height:100px;}
 
-.blank1{font-size: 12pt;}
+.blank1{font-size: 0pt;}
 
 #date{font-size: 12pt;font-family:sans-serif;text-align:right;}
 
 
 
-.cat_name_area{width:1050px;margin:auto;background-image:url(images/t-bg02.png);min-height:100px;max-height:100px;}
+.cat_name_area{margin:2%;background-image:url(images/t-bg02.png);min-height:100px;max-height:100px;}
 .cat_table td{font-size: 40pt;font-family:sans-serif;text-align:left;vertical-align:middle;height:100px;}
 
 
@@ -20,8 +20,8 @@ body{text-align:center;}
 #property_left td{font-size: 22pt;font-family:sans-serif;text-align:right;align:center;text-align:center;}
 
 
-.text_bg{width:1050px;margin:auto;background-image:url(images/bg02.png);}
-.text_area{width:1050px;margin:auto;word-wrap:break-word; word-break:break-all;font-size: 33pt;font-family:sans-serif;text-align:left;overflow-y:auto; min-height:810px;max-height:810px;}
+.text_bg{margin:2%;background-image:url(images/bg02.png);}
+.text_area{margin:0%;word-wrap:break-word; word-break:break-all;font-size: 33pt;font-family:sans-serif;text-align:left;overflow-y:auto; min-height:750px;max-height:750px;}
 
 
 #interact_bg{width:1050px;margin:auto;background-image:url(images/bg02.png);}

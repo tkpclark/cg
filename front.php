@@ -107,13 +107,12 @@
 	</div>
         
         
-	<div class="blank1">&nbsp;</div>
 	
 	<table id="property_list" >
 		<tr>
 			<td width="80%" >
 				
-				<table id="property_left" width="100%">
+				<table id="property_left" width="100%" border=1px>
 					<tr>
 					<?php 
 					$i=0;

@@ -5,18 +5,14 @@
         <title>cg2</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="../easyui/jquery.min.js"></script>
-        <script type="text/javascript" src="../../easyui/jquery.easyui.min.js"></script>
-        <script type="text/javascript" src="keyboard/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="keyboard/jquery.keypad.js"></script>
 		
-		<!-- 
-		<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<script language="javascript" src="http://revolunet.github.com/VLCcontrols/src/jquery-vlc.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://revolunet.github.com/VLCcontrols/src/styles.css" />
-	 	-->
+
 
 
         <script type="text/javascript" language="javascript">
+        
+        
 
         function play(tgt) {
           //  var uri = "http://live.64ma.com/livePlay.asp?uid=279&amp;rn=b3a8NiaNibe9baZ88ZSS";
@@ -57,9 +53,13 @@
         
         setTimeout(handler,10000); 
         */
-        
+        function unbind_video()
+        {
+        	 $("embed").unbind();
+        	 console.log("unbind video");
+        }
         $(document).ready(function(){
-        	$("#down_area").load("front.php?community="+$("#cid").val()+"&gid="+$("#gid").val());
+        	go_front();
 			//console.log($("#cid").val()) ;  
 			
 			/*
@@ -67,11 +67,8 @@
 	        player.play('mms://tv.jxgdw.com/jxtv1');
 	        */
 	       
-	        
-	        
-	        setInterval(display_date(),1000);
-	        
-	        
+	        setInterval("display_date()",1000);
+	        setInterval("unbind_video()",1000);
 	        play('vlc');
         });
   
@@ -83,6 +80,7 @@
 	<?php if(!isset($_REQUEST['gid'])){echo "no gid!"; exit;} else{$gid=$_REQUEST['gid'];}?>
 	<input id="cid" type="hidden" value="<?php echo $cid;?>">
 	<input id="gid" type="hidden" value="<?php echo $gid;?>">
+	<input id="duration" type="hidden" value="">
 	
 	   <div id="bg">
 	   
@@ -120,8 +118,8 @@
     	type="application/x-vlc-plugin" 
     	pluginspage="http://www.videolan.org" 
     	version="VideoLAN.VLCPlugin.2"
-    	width="1080"
-      	height="864"
+    	width="1070"
+      	height="856"
         id="vlc"
     	></embed>
     	
@@ -134,5 +132,27 @@
 	   </div>
 	    
     </body>
-    
-   
+<script type="text/javascript">  
+function go_front(){
+	$("#down_area").load("front.php?gid="+$("#gid").val()+"&community="+$("#cid").val());
+	lastid=$("#duration").val();
+	clearTimeout(lastid);
+}
+function auto_return(){
+	
+	//clear
+	lastid=$("#duration").val();
+	clearTimeout(lastid);
+	
+	//set new
+	var duration=<?php echo get_content_by_name("空闲回主页时间");?>*1000;
+	if(duration < 1)
+	{
+		duration=110000;
+	}
+	id=setTimeout("go_front()",duration);
+	//clearTimeout(id);
+	$("#duration").val(id);
+	console.log("lastid:"+lastid+" new duration:"+duration+" newn settimeid:"+id);
+}
+</script>
