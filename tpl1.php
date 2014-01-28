@@ -2,18 +2,34 @@
 <?php $catid=$_REQUEST['catid'];?>
 
 <script type="text/javascript">
-var t=0;
+var id=0;
 function go_front(){
 	$("#down_area").load("front.php?gid="+$("#gid").val()+"&community="+$("#cid").val());
-	clearTimeout(t);
+	clearTimeout(id);
 }
 function auto_return(){
-	var duration=$("#duration").val()*1000;
-	console.log("duration:"+duration);
-	t=setTimeout("go_front()",duration);
+	var duration=<?php echo get_content_by_name("空闲回主页时间");?>*1000;
+	if(duration < 1)
+	{
+		duration=110000;
+	}
+	lastid=id;
+	clearTimeout(lastid);
+	id=setTimeout("go_front()",duration);
+	//clearTimeout(id);
+	console.log("lastid:"+lastid+" new duration:"+duration+" newn settimeid:"+id);
 }
 auto_return();
+
+$(document).ready(function(){
+
+	$("#content").click(function(){
+		auto_return();
+	});
+
+});
 </script>
+
 
 	<div class="cat_name_area">
 		<table class="cat_table" width="100%">

@@ -150,7 +150,7 @@
 		//echo "number: ".$res->num_rows;
 		
 		$row = $res->fetch_array(MYSQLI_ASSOC);
-		return $row['content'];
+		return $row['content']?$row['content']:"0";
 	}
 	function get_recom($cid)
 	{

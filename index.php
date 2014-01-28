@@ -83,7 +83,6 @@
 	<?php if(!isset($_REQUEST['gid'])){echo "no gid!"; exit;} else{$gid=$_REQUEST['gid'];}?>
 	<input id="cid" type="hidden" value="<?php echo $cid;?>">
 	<input id="gid" type="hidden" value="<?php echo $gid;?>">
-	<input id="duration" type="hidden" value="<?php echo get_content_by_name("空闲回主页时间");?>">
 	
 	   <div id="bg">
 	   
