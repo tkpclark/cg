@@ -1,8 +1,7 @@
 <?php require_once 'get_content.php';?>
-
     <head>
         <meta charset="utf-8">
-        <title>cg2</title>
+        <title>cg3</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="../easyui/jquery.min.js"></script>
 		<script type="text/javascript" src="keyboard/jquery.keypad.js"></script>
@@ -15,15 +14,23 @@
         
 
         function play(tgt) {
-          //  var uri = "http://live.64ma.com/livePlay.asp?uid=279&amp;rn=b3a8NiaNibe9baZ88ZSS";
-             var uri = "http://qqlive.dnion.com:1863/2515002412.flv?apptype=live&amp;pla=WIN&amp;time=1390830090&amp;cdn=zijian&amp;vkey=91AB32CA49F45608ABEFA90119620493D1FA61F4D23029098BC1DEF973DF135FC794708E87BCDABB";
-            if (document.all) tgt += "_IE"
-            var tgt = document.getElementById(tgt);
-           // alert(tgt);
-            if (document.all) tgt.playlist.add(uri,uri, new Array());
-            else     tgt.playlist.add(uri,uri, "");
-            tgt.playlist.play(); 
+        	//var uri = "http://live.64ma.com/livePlay.asp?uid=279&amp;rn=b3a8NiaNibe9baZ88ZSS";
+        	//var uri = "http://qqlive.dnion.com:1863/2515002412.flv?apptype=live&amp;pla=WIN&amp;time=1390830090&amp;cdn=zijian&amp;vkey=91AB32CA49F45608ABEFA90119620493D1FA61F4D23029098BC1DEF973DF135FC794708E87BCDABB";
+        	//var uri = "mms://tv.jxgdw.com/jxtv1";
+        	//var uri = "http://live.64ma.com/livePlay.asp?uid=202&amp;rn=b3a8NiaNibf9bcZc3Z3f";
+        	//var uri="http://qqlive.dnion.com:1863/2515002412.flv?apptype=live&pla=WIN&time=1390958535&cdn=zijian&vkey=27C9D236518FB1A44F1F36372E7887615A1DF1ACBAF0E830AD48AD9AB950F76111FF0100409BDB72";
+        	//var uri="http://116.77.70.81/live/1,TWSX0004200211100000?format=mpegts&codec=x264&bitrate=2000k";
+        	//var uri="http://live.64ma.com/livePlay.asp?uid=279&amp;rn=b3a8NiaNibe9baZ88ZSS";//jiangsu
+        	var uri="http://live.64ma.com/livePlay.asp?uid=202&amp;rn=b3a8NiaNibf9bcZc3Z3f";//cctv2
+        	if (document.all) tgt += "_IE"
+        	var tgt = document.getElementById(tgt);
+        	// alert(tgt);
+        	if (document.all) tgt.playlist.add(uri,uri, new Array());
+        	else     tgt.playlist.add(uri,uri, "");
+        	tgt.video.fullscreen=true;
+        	tgt.playlist.play(); 
         }
+
 		
         function display_date(){
         	
@@ -43,16 +50,14 @@
         	$("#date").html(mydate);
         }
         
-        /*
         var handler = function(){
         	var vlc = document.getElementById("vlc");
 		    vlc.audio.volume=160;
-		   // alert(vlc.audio.volume);
+		    console.log(vlc.audio.volume);
         	
         }
         
         setTimeout(handler,10000); 
-        */
         function unbind_video()
         {
         	 $("embed").unbind();
@@ -67,8 +72,8 @@
 	        player.play('mms://tv.jxgdw.com/jxtv1');
 	        */
 	       
-	        setInterval("display_date()",1000);
-	        setInterval("unbind_video()",1000);
+	        setInterval("display_date()",10000);
+	        setInterval("unbind_video()",10000);
 	        play('vlc');
         });
   
@@ -96,9 +101,9 @@
 		</div>
 		
 		<!-- video -->
-		<!-- 
-		<img src="images/video.jpg">
-		
+		 
+		<img src="images/ma2.jpg">
+		<!--
 		<embed width="1080" height="720" src="http://114.113.146.18:9900/player.swf?type=http&file=y01.flv"></embed>
 		 -->
 		 <!--
@@ -114,6 +119,7 @@
             <param name="ShowDisplay" value="false" />
     	</object>
     	-->
+    	<!-- 
     	<embed 
     	type="application/x-vlc-plugin" 
     	pluginspage="http://www.videolan.org" 
@@ -122,8 +128,7 @@
       	height="856"
         id="vlc"
     	></embed>
-    	
-    	
+    	 -->
 		
 		<div class="blank1">&nbsp;</div>
 		
