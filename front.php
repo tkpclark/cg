@@ -1,59 +1,4 @@
- <script type="text/javascript">
-	$(document).ready(function(){
-      
 
-          $("#work").click(function(){
-        	  $("#down_area").load("work.php?community="+$("#cid").val());
-          });
-
-          $("#announcement").click(function(){
-        	  $("#down_area").load("announcement.php?community="+$("#cid").val());
-          });
-
-          $("#interact").click(function(){
-        	  $("#down_area").load("interact.php?community="+$("#cid").val());
-          });
-
-          $("#property_tell").click(function(){
-        	  $("#down_area").load("property_tell.php?community="+$("#cid").val());
-          });
-
-          $("#notice").click(function(){
-        	  $("#down_area").load("notice.php?community="+$("#cid").val());
-          });
-
-          $("#map").click(function(){
-        	  $("#down_area").load("map.php?community="+$("#cid").val());
-          });
-
-          $("#promotion").click(function(){
-        	  $("#down_area").load("promotion.php?community="+$("#cid").val());
-          });
-
-          $("#traffic").click(function(){
-        	  $("#down_area").load("traffic.php?community="+$("#cid").val());
-          });
-
-          $("#book").click(function(){
-        	  $("#down_area").load("book.php?community="+$("#cid").val());
-          });
-
-          $("#ticket").click(function(){
-        	  $("#down_area").load("ticket.php?community="+$("#cid").val());
-          });
-          
-          $("#handbook").click(function(){
-        	  $("#down_area").load("handbook.php?community="+$("#cid").val());
-          });
-
-          $("#repair").click(function(){
-        	  $("#down_area").load("repair.php?community="+$("#cid").val());
-          });
-          
-
-          
-        });
-</script>
 
 <?php require_once 'get_content.php';?>
 
@@ -61,7 +6,7 @@
 		<table class="cat_table" width="100%">
 			<tr>
 				<td class="title2">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_cat_name($_REQUEST['gid']);?></td>
-				<td style="vertical-align:middle; text-align:right;font-size: 30pt;"><?php echo get_content_by_name("天气预报");?>
+				<td id="weather" style="vertical-align:middle; text-align:right;font-size: 30pt;"><?php echo get_content_by_name("天气预报");?>
 				</td>
 			</tr>
 		</table>
@@ -168,9 +113,18 @@
 			</td>
 		</tr>
 	</table>
-
-
+	
+	<div style="height:51">&nbsp;</div> 
     </div>
     
-    
+<script type="text/javascript">
+	
+		
+function update_weather(){
+	$("#weather").load("weather.php");
+}
+		
+setInterval("update_weather()",5000);
+
+</script>
     
